@@ -1,0 +1,24 @@
+# https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md
+
+# file options
+
+# --exclude Tests/XCTestManifests.swift,Snapshots,Pods
+--exclude .swiftlint.yml,BuildTools,Generated
+
+# format options 
+--indent 4
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first
+--funcattributes prev-line
+--typeattributes prev-line
+#--header "\n {file}\n\n Created by Miharu Naruse on {created}.\n Copyright (c) {year} m_rn. All rights reserved.\n"
+
+# disable
+--disable emptyBraces
+--disable numberFormatting
+--disable redundantLet
+--disable redundantRawValues
+--disable trailingCommas
+--disable unusedArguments
+--disable redundantReturn

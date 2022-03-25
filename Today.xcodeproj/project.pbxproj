@@ -134,6 +134,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28378E4C27EDB4630000F8F0 /* Build configuration list for PBXNativeTarget "Today" */;
 			buildPhases = (
+				28378E5627EDB9890000F8F0 /* Run Script SwiftFormat */,
 				28378E1E27EDB45C0000F8F0 /* Sources */,
 				28378E1F27EDB45C0000F8F0 /* Frameworks */,
 				28378E2027EDB45C0000F8F0 /* Resources */,
@@ -143,6 +144,8 @@
 			dependencies = (
 			);
 			name = Today;
+			packageProductDependencies = (
+			);
 			productName = Today;
 			productReference = 28378E2227EDB45C0000F8F0 /* Today.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +218,8 @@
 				Base,
 			);
 			mainGroup = 28378E1927EDB45C0000F8F0;
+			packageReferences = (
+			);
 			productRefGroup = 28378E2327EDB45C0000F8F0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -252,6 +257,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28378E5627EDB9890000F8F0 /* Run Script SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd BuildTools\nSDKROOT=(xcrun --sdk macosx --show-sdk-path)\n#swift package update #Uncomment this line temporarily to update the version used to the latest matching your BuildTools/Package.swift file\nswift run -c release swiftformat \"$SRCROOT\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		28378E1E27EDB45C0000F8F0 /* Sources */ = {
