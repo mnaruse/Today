@@ -6,8 +6,8 @@ Learn the basics of Xcode and UIKit to create compelling iOS apps.
 
 ## Dependency
 
-- Swift 5.5
-- Xcode 13.2.1
+- Swift 5.6
+- Xcode 13.3
 
 ## Setup
 
