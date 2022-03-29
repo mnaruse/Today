@@ -7,11 +7,26 @@
 
 import Foundation
 
-struct Reminder {
+struct Reminder: Identifiable {
+    var id: String = UUID().uuidString
     var title: String
     var dueDate: Date
     var notes: String?
     var isComplete: Bool = false
+}
+
+extension Array where Element == Reminder {
+    /// Reminder のインデックス
+    ///
+    /// Reminder に直接アクセスする代わりにこのメソッドを使用することで、潜在的なエラーを減らし、コードの保守を簡単にする。
+    /// - Parameter id: Reminder の ID
+    /// - Returns: インデックス
+    func indexOfReminder(with id: Reminder.ID) -> Self.Index {
+        guard let index = firstIndex(where: { $0.id == id }) else {
+            fatalError()
+        }
+        return index
+    }
 }
 
 #if DEBUG

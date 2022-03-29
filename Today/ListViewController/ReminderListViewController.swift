@@ -8,9 +8,10 @@
 import UIKit
 
 class ReminderListViewController: UICollectionViewController {
-    // MARK: Private Properties
+    // MARK: Internal Properries
 
-    private var dataSource: DataSource!
+    var dataSource: DataSource!
+    var reminders: [Reminder] = Reminder.sampleData
 
     // MARK: Overrides
 
@@ -22,14 +23,11 @@ class ReminderListViewController: UICollectionViewController {
 
         let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
 
-        dataSource = DataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) -> UICollectionViewCell? in
+        dataSource = DataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: Reminder.ID) -> UICollectionViewCell? in
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
 
-        var snapShot = SnapShot()
-        snapShot.appendSections([0])
-        snapShot.appendItems(Reminder.sampleData.map(\.title))
-        dataSource.apply(snapShot)
+        updateSnapShot()
 
         collectionView.dataSource = dataSource
     }
