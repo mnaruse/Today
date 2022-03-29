@@ -3,7 +3,7 @@
 # file options
 
 # --exclude Tests/XCTestManifests.swift,Snapshots,Pods
---exclude .swiftlint.yml,BuildTools,Generated
+--exclude .swiftlint.yml,BuildTools,Today/Generated
 
 # format options 
 --indent 4
