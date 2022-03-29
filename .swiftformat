@@ -10,8 +10,6 @@
 --wraparguments before-first
 --wrapparameters before-first
 --wrapcollections before-first
---funcattributes prev-line
---typeattributes prev-line
 #--header "\n {file}\n\n Created by Miharu Naruse on {created}.\n Copyright (c) {year} m_rn. All rights reserved.\n"
 
 # disable
@@ -22,3 +20,4 @@
 --disable trailingCommas
 --disable unusedArguments
 --disable redundantReturn
+--disable preferKeyPath # Convert trivial map { $0.foo } closures to keyPath-based syntax.
