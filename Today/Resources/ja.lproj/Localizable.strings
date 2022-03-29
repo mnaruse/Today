@@ -4,3 +4,10 @@
 //
 //  Created by Miharu Naruse on 2022/03/29.
 //
+
+"completed" = "完了";
+"notCompleted" = "未完了";
+"toggleCompletion" = "切替完了";
+"todayAtTime" = "今日 %@";
+"dateAtTime" = "%@ %@";
+"today" = "今日";

@@ -4,3 +4,10 @@
 //
 //  Created by Miharu Naruse on 2022/03/29.
 //
+
+"completed" = "Completed";
+"notCompleted" = "Not completed";
+"toggleCompletion" = "Toggle completion";
+"todayAtTime" = "Today at %@";
+"dateAtTime" = "%@ at %@";
+"today" = "Today";

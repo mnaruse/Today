@@ -12,19 +12,17 @@ extension Date {
     var dayAndTimeText: String {
         let timeText = formatted(date: .omitted, time: .shortened)
         if Locale.current.calendar.isDateInToday(self) {
-            let timeFormat = NSLocalizedString("Today at %@", comment: "Today at time format string")
-            return String(format: timeFormat, timeText)
+            return L10n.todayAtTime(timeText)
         } else {
             let dateText = formatted(.dateTime.month(.abbreviated).day())
-            let dateFormat = NSLocalizedString("%@ at %@", comment: "Date and time format string")
-            return String(format: dateFormat, dateText, timeText)
+            return L10n.dateAtTime(dateText, timeText)
         }
     }
 
     /// 日付のテキスト
     var dayText: String {
         if Locale.current.calendar.isDateInToday(self) {
-            return NSLocalizedString("Today", comment: "Today due date description")
+            return L10n.today
         } else {
             return formatted(.dateTime.month().day().weekday(.wide))
         }

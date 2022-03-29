@@ -16,11 +16,11 @@ extension ReminderListViewController {
     // MARK: Private Computed Properties
 
     var reminderCompletedValue: String {
-        NSLocalizedString("Completed", comment: "Reminder completed value")
+        L10n.completed
     }
 
     var reminderNotCompletedValue: String {
-        NSLocalizedString("Not completed", comment: "Reminder not completed value")
+        L10n.notCompleted
     }
 
     // MARK: Internal Functions
@@ -78,7 +78,7 @@ extension ReminderListViewController {
     /// - Parameter reminder: モデル
     /// - Returns: アクセシビリティアクション
     private func doneButtonAccessibilityAction(for reminder: Reminder) -> UIAccessibilityCustomAction {
-        let name = NSLocalizedString("Toggle completion", comment: "Reminder done button accessibility label")
+        let name = L10n.toggleCompletion
         let action = UIAccessibilityCustomAction(name: name) { [weak self] action in
             self?.completeReminder(with: reminder.id)
             return true
