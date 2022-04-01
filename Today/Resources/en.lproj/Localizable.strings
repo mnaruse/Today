@@ -12,6 +12,10 @@
 "dateAtTime" = "%@ at %@";
 "today" = "Today";
 
+"reminder.section.title" = "Title";
+"reminder.section.date" = "Date";
+"reminder.section.notes" = "Notes";
+
 // MARK: Titles
 
 "title.reminderVC" = "Reminder";

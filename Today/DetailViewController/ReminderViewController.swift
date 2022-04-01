@@ -10,8 +10,8 @@ import UIKit
 class ReminderViewController: UICollectionViewController {
     // MARK: Private Type Aliases
 
-    private typealias DataSource = UICollectionViewDiffableDataSource<Int, Row>
-    private typealias SnapShot = NSDiffableDataSourceSnapshot<Int, Row>
+    private typealias DataSource = UICollectionViewDiffableDataSource<Section, Row>
+    private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, Row>
 
     // MARK: Private Stored Properties
 
@@ -67,10 +67,18 @@ class ReminderViewController: UICollectionViewController {
     /// スナップショットを更新
     private func updateSnapShot() {
         var snapShot = SnapShot()
-        snapShot.appendSections([0])
-        snapShot.appendItems([.viewTitle, .viewDate, .viewTime, .viewNotes], toSection: 0)
-        snapShot.reloadSections([0])
+        snapShot.appendSections([.view])
+        snapShot.appendItems([.viewTitle, .viewDate, .viewTime, .viewNotes], toSection: .view)
+        snapShot.reloadSections([.view])
         dataSource.apply(snapShot)
+    }
+
+    private func section(for indexPath: IndexPath) -> Section {
+        let sectionNumber = isEditing ? indexPath.section + 1 : indexPath.section
+        guard let section = Section(rawValue: sectionNumber) else {
+            fatalError("Unable to find matching section")
+        }
+        return section
     }
 
     private func text(for row: Row) -> String? {

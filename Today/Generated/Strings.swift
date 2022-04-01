@@ -27,6 +27,17 @@ internal enum L10n {
   /// Toggle completion
   internal static let toggleCompletion = L10n.tr("Localizable", "toggleCompletion")
 
+  internal enum Reminder {
+    internal enum Section {
+      /// Date
+      internal static let date = L10n.tr("Localizable", "reminder.section.date")
+      /// Notes
+      internal static let notes = L10n.tr("Localizable", "reminder.section.notes")
+      /// Title
+      internal static let title = L10n.tr("Localizable", "reminder.section.title")
+    }
+  }
+
   internal enum Title {
     /// Reminder
     internal static let reminderVC = L10n.tr("Localizable", "title.reminderVC")

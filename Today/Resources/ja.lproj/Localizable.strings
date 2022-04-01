@@ -12,6 +12,10 @@
 "dateAtTime" = "%@ %@";
 "today" = "今日";
 
+"reminder.section.title" = "タイトル";
+"reminder.section.date" = "日時";
+"reminder.section.notes" = "メモ";
+
 // MARK: Titles
 
 "title.reminderVC" = "リマインダー";
