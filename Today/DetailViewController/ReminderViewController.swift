@@ -24,6 +24,7 @@ class ReminderViewController: UICollectionViewController {
         self.reminder = reminder
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConfiguration.showsSeparators = false
+        listConfiguration.headerMode = .firstItemInSection
         let listLayout = UICollectionViewCompositionalLayout.list(using: listConfiguration)
 
         super.init(collectionViewLayout: listLayout)
@@ -68,6 +69,10 @@ class ReminderViewController: UICollectionViewController {
     private func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, row: Row) {
         let section = section(for: indexPath)
         switch (section, row) {
+        case let (_, .header(title)):
+            var contentConfiguration = cell.defaultContentConfiguration()
+            contentConfiguration.text = title
+            cell.contentConfiguration = contentConfiguration
         case (.view, _):
             var contentConfiguration = cell.defaultContentConfiguration()
             contentConfiguration.text = text(for: row)
@@ -85,6 +90,9 @@ class ReminderViewController: UICollectionViewController {
     private func updateSnapshotForEditing() {
         var snapShot = SnapShot()
         snapShot.appendSections([.title, .date, .notes])
+        snapShot.appendItems([.header(Section.title.name)], toSection: .title)
+        snapShot.appendItems([.header(Section.date.name)], toSection: .date)
+        snapShot.appendItems([.header(Section.notes.name)], toSection: .notes)
         dataSource.apply(snapShot)
     }
 
@@ -92,7 +100,7 @@ class ReminderViewController: UICollectionViewController {
     private func updateSnapShotForViewing() {
         var snapShot = SnapShot()
         snapShot.appendSections([.view])
-        snapShot.appendItems([.viewTitle, .viewDate, .viewTime, .viewNotes], toSection: .view)
+        snapShot.appendItems([.header(""), .viewTitle, .viewDate, .viewTime, .viewNotes], toSection: .view)
         dataSource.apply(snapShot)
     }
 
@@ -114,6 +122,8 @@ class ReminderViewController: UICollectionViewController {
             return reminder.dueDate.formatted(date: .omitted, time: .shortened)
         case .viewTitle:
             return reminder.title
+        default:
+            return nil
         }
     }
 }
