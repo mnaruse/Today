@@ -46,10 +46,21 @@ class ReminderViewController: UICollectionViewController {
         }
 
         navigationItem.title = L10n.Title.reminderVC
+        navigationItem.rightBarButtonItem = editButtonItem
 
         updateSnapShotForViewing()
 
         collectionView.dataSource = dataSource
+    }
+
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+
+        if editing {
+            updateSnapshotForEditing()
+        } else {
+            updateSnapShotForViewing()
+        }
     }
 
     // MARK: Private Functions
