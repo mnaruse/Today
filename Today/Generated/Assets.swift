@@ -20,6 +20,19 @@ internal typealias AssetColorTypeAlias = ColorAsset.Color
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal static let accentColor = ColorAsset(name: "AccentColor")
+  internal static let todayDetailCellTint = ColorAsset(name: "TodayDetailCellTint")
+  internal static let todayGradientAllBegin = ColorAsset(name: "TodayGradientAllBegin")
+  internal static let todayGradientAllEnd = ColorAsset(name: "TodayGradientAllEnd")
+  internal static let todayGradientFutureBegin = ColorAsset(name: "TodayGradientFutureBegin")
+  internal static let todayGradientFutureEnd = ColorAsset(name: "TodayGradientFutureEnd")
+  internal static let todayGradientTodayBegin = ColorAsset(name: "TodayGradientTodayBegin")
+  internal static let todayGradientTodayEnd = ColorAsset(name: "TodayGradientTodayEnd")
+  internal static let todayListCellBackground = ColorAsset(name: "TodayListCellBackground")
+  internal static let todayListCellDoneButtonTint = ColorAsset(name: "TodayListCellDoneButtonTint")
+  internal static let todayNavigationBackground = ColorAsset(name: "TodayNavigationBackground")
+  internal static let todayPrimaryTint = ColorAsset(name: "TodayPrimaryTint")
+  internal static let todayProgressLowerBackground = ColorAsset(name: "TodayProgressLowerBackground")
+  internal static let todayProgressUpperBackground = ColorAsset(name: "TodayProgressUpperBackground")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
