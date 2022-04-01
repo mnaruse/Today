@@ -47,7 +47,7 @@ class ReminderViewController: UICollectionViewController {
 
         navigationItem.title = L10n.Title.reminderVC
 
-        updateSnapShot()
+        updateSnapShotForViewing()
 
         collectionView.dataSource = dataSource
     }
@@ -55,21 +55,33 @@ class ReminderViewController: UICollectionViewController {
     // MARK: Private Functions
 
     private func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, row: Row) {
-        var contentConfiguration = cell.defaultContentConfiguration()
-        contentConfiguration.text = text(for: row)
-        contentConfiguration.textProperties.font = UIFont.preferredFont(forTextStyle: row.textStyle)
-        contentConfiguration.image = row.image
-        cell.contentConfiguration = contentConfiguration
+        let section = section(for: indexPath)
+        switch (section, row) {
+        case (.view, _):
+            var contentConfiguration = cell.defaultContentConfiguration()
+            contentConfiguration.text = text(for: row)
+            contentConfiguration.textProperties.font = UIFont.preferredFont(forTextStyle: row.textStyle)
+            contentConfiguration.image = row.image
+            cell.contentConfiguration = contentConfiguration
+        default:
+            fatalError("Unexpected combination of section and row.")
+        }
 
         cell.tintColor = Asset.todayPrimaryTint.color
     }
 
-    /// スナップショットを更新
-    private func updateSnapShot() {
+    /// 編集用のスナップショットを更新
+    private func updateSnapshotForEditing() {
+        var snapShot = SnapShot()
+        snapShot.appendSections([.title, .date, .notes])
+        dataSource.apply(snapShot)
+    }
+
+    /// 閲覧用のスナップショットを更新
+    private func updateSnapShotForViewing() {
         var snapShot = SnapShot()
         snapShot.appendSections([.view])
         snapShot.appendItems([.viewTitle, .viewDate, .viewTime, .viewNotes], toSection: .view)
-        snapShot.reloadSections([.view])
         dataSource.apply(snapShot)
     }
 
