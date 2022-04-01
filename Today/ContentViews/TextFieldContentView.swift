@@ -21,7 +21,11 @@ class TextFieldContentView: UIView, UIContentView {
     // MARK: Internal Stored Properties
 
     let textField = UITextField()
-    var configuration: UIContentConfiguration
+    var configuration: UIContentConfiguration {
+        didSet {
+            configure(configuration: configuration)
+        }
+    }
 
     // MARK: Initializers
 
@@ -41,5 +45,22 @@ class TextFieldContentView: UIView, UIContentView {
 
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 0, height: 44)
+    }
+
+    // MARK: Internal Functions
+
+    func configure(configuration: UIContentConfiguration) {
+        guard let configuration = configuration as? Configuration else {
+            return
+        }
+        textField.text = configuration.text
+    }
+}
+
+// MARK: - Extension UICollectionViewListCell
+
+extension UICollectionViewListCell {
+    func textFieldConfiguration() -> TextFieldContentView.Configuration {
+        TextFieldContentView.Configuration()
     }
 }
