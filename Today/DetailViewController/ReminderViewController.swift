@@ -13,9 +13,12 @@ class ReminderViewController: UICollectionViewController {
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, Row>
     private typealias SnapShot = NSDiffableDataSourceSnapshot<Section, Row>
 
+    // MARK: Internal Stored Properties
+
+    var reminder: Reminder
+
     // MARK: Private Stored Properties
 
-    private var reminder: Reminder
     private var dataSource: DataSource!
 
     // MARK: Initializers
@@ -70,15 +73,9 @@ class ReminderViewController: UICollectionViewController {
         let section = section(for: indexPath)
         switch (section, row) {
         case let (_, .header(title)):
-            var contentConfiguration = cell.defaultContentConfiguration()
-            contentConfiguration.text = title
-            cell.contentConfiguration = contentConfiguration
+            cell.contentConfiguration = headerConfiguration(for: cell, with: title)
         case (.view, _):
-            var contentConfiguration = cell.defaultContentConfiguration()
-            contentConfiguration.text = text(for: row)
-            contentConfiguration.textProperties.font = UIFont.preferredFont(forTextStyle: row.textStyle)
-            contentConfiguration.image = row.image
-            cell.contentConfiguration = contentConfiguration
+            cell.contentConfiguration = defaultConfiguration(for: cell, at: row)
         default:
             fatalError("Unexpected combination of section and row.")
         }
@@ -110,20 +107,5 @@ class ReminderViewController: UICollectionViewController {
             fatalError("Unable to find matching section")
         }
         return section
-    }
-
-    private func text(for row: Row) -> String? {
-        switch row {
-        case .viewDate:
-            return reminder.dueDate.dayText
-        case .viewNotes:
-            return reminder.notes
-        case .viewTime:
-            return reminder.dueDate.formatted(date: .omitted, time: .shortened)
-        case .viewTitle:
-            return reminder.title
-        default:
-            return nil
-        }
     }
 }
