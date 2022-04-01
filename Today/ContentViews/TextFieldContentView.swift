@@ -7,14 +7,26 @@
 
 import UIKit
 
-class TextFieldContentView: UIView {
+class TextFieldContentView: UIView, UIContentView {
+    // MARK: Internal Structs
+
+    struct Configuration: UIContentConfiguration {
+        var text: String? = ""
+
+        func makeContentView() -> UIView & UIContentView {
+            return TextFieldContentView(self)
+        }
+    }
+
     // MARK: Internal Stored Properties
 
     let textField = UITextField()
+    var configuration: UIContentConfiguration
 
     // MARK: Initializers
 
-    override init(frame: CGRect) {
+    init(_ configuration: UIContentConfiguration) {
+        self.configuration = configuration
         super.init(frame: .zero)
         addPinnedSubview(textField, insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
         textField.clearButtonMode = .whileEditing
