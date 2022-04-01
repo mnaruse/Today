@@ -11,3 +11,7 @@
 "todayAtTime" = "Today at %@";
 "dateAtTime" = "%@ at %@";
 "today" = "Today";
+
+// MARK: Titles
+
+"title.reminderVC" = "Reminder";

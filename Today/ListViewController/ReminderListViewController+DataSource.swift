@@ -72,6 +72,14 @@ extension ReminderListViewController {
         updateSnapShot(reloading: [id])
     }
 
+    /// インデックスを元に Reminder を取得
+    /// - Parameter id: インデックス
+    /// - Returns: Reminder
+    func reminder(for id: Reminder.ID) -> Reminder {
+        let index = reminders.indexOfReminder(with: id)
+        return reminders[index]
+    }
+
     // MARK: Private Functions
 
     /// セルのアクセサリーの DONE ボタンのアクセシビリティアクション
@@ -98,14 +106,6 @@ extension ReminderListViewController {
         button.id = reminder.id
         button.setImage(image, for: .normal)
         return UICellAccessory.CustomViewConfiguration(customView: button, placement: .leading(displayed: .always))
-    }
-
-    /// インデックスを元に Reminder を取得
-    /// - Parameter id: インデックス
-    /// - Returns: Reminder
-    private func reminder(for id: Reminder.ID) -> Reminder {
-        let index = reminders.indexOfReminder(with: id)
-        return reminders[index]
     }
 
     /// 新しい Reminder とインデックスを元に、Reminder を更新

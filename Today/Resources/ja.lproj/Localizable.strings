@@ -11,3 +11,7 @@
 "todayAtTime" = "今日 %@";
 "dateAtTime" = "%@ %@";
 "today" = "今日";
+
+// MARK: Titles
+
+"title.reminderVC" = "リマインダー";

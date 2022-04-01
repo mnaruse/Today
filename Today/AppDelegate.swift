@@ -11,6 +11,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setNavigationBarAppearance()
         return true
     }
 
@@ -26,5 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+
+    // MARK: Private Functions
+
+    /// ナビゲーションバーの外観を設定
+    private func setNavigationBarAppearance() {
+        UINavigationBar.appearance().tintColor = Asset.todayPrimaryTint.color
+        UINavigationBar.appearance().backgroundColor = Asset.todayNavigationBackground.color
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
     }
 }
