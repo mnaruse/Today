@@ -16,6 +16,10 @@ class ReminderViewController: UICollectionViewController {
     // MARK: Internal Stored Properties
 
     var reminder: Reminder
+    /// 一時的な Reminder
+    ///
+    /// ユーザーが保存または破棄を選択するまで、編集内容を保存する。
+    var workingReminder: Reminder
 
     // MARK: Private Stored Properties
 
@@ -25,6 +29,7 @@ class ReminderViewController: UICollectionViewController {
 
     init(reminder: Reminder) {
         self.reminder = reminder
+        workingReminder = reminder
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConfiguration.showsSeparators = false
         listConfiguration.headerMode = .firstItemInSection
@@ -61,9 +66,9 @@ class ReminderViewController: UICollectionViewController {
         super.setEditing(editing, animated: animated)
 
         if editing {
-            updateSnapshotForEditing()
+            prepareForEditing()
         } else {
-            updateSnapShotForViewing()
+            prepareForViewing()
         }
     }
 
@@ -89,7 +94,12 @@ class ReminderViewController: UICollectionViewController {
         cell.tintColor = Asset.todayPrimaryTint.color
     }
 
-    /// 編集用のスナップショットを更新
+    /// 編集モードを準備
+    private func prepareForEditing() {
+        updateSnapshotForEditing()
+    }
+
+    /// 編集モードのスナップショットを更新
     private func updateSnapshotForEditing() {
         var snapShot = SnapShot()
         snapShot.appendSections([.title, .date, .notes])
@@ -99,7 +109,15 @@ class ReminderViewController: UICollectionViewController {
         dataSource.apply(snapShot)
     }
 
-    /// 閲覧用のスナップショットを更新
+    /// 閲覧モードを準備
+    private func prepareForViewing() {
+        if workingReminder != reminder {
+            reminder = workingReminder
+        }
+        updateSnapShotForViewing()
+    }
+
+    /// 閲覧モードのスナップショットを更新
     private func updateSnapShotForViewing() {
         var snapShot = SnapShot()
         snapShot.appendSections([.view])
