@@ -16,7 +16,8 @@ extension ReminderViewController {
         case viewNotes
         case viewTime
         case viewTitle
-        case editText(String)
+        case editDate(Date)
+        case editText(String?)
 
         // MARK: Internal Computed Properties
 
