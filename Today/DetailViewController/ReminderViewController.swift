@@ -15,11 +15,18 @@ class ReminderViewController: UICollectionViewController {
 
     // MARK: Internal Stored Properties
 
-    var reminder: Reminder
+    var reminder: Reminder {
+        didSet {
+            onChange(reminder)
+        }
+    }
+
     /// 一時的な Reminder
     ///
     /// ユーザーが保存または破棄を選択するまで、編集内容を保存する。
     var workingReminder: Reminder
+    /// Reminder の値が変更されたときに実行したい動作を保持
+    var onChange: (Reminder) -> Void
 
     // MARK: Private Stored Properties
 
@@ -27,9 +34,10 @@ class ReminderViewController: UICollectionViewController {
 
     // MARK: Initializers
 
-    init(reminder: Reminder) {
+    init(reminder: Reminder, onChange: @escaping (Reminder) -> Void) {
         self.reminder = reminder
         workingReminder = reminder
+        self.onChange = onChange
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConfiguration.showsSeparators = false
         listConfiguration.headerMode = .firstItemInSection

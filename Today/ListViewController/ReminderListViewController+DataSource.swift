@@ -25,6 +25,15 @@ extension ReminderListViewController {
 
     // MARK: Internal Functions
 
+    /// 新しい Reminder とインデックスを元に、Reminder を更新
+    /// - Parameters:
+    ///   - reminder: 新しい Reminder
+    ///   - id: インデックス
+    func update(_ reminder: Reminder, with id: Reminder.ID) {
+        let index = reminders.indexOfReminder(with: id)
+        reminders[index] = reminder
+    }
+
     /// スナップショットを更新
     /// - Parameter ids: 更新したい Reminder の ID の配列
     func updateSnapShot(reloading ids: [Reminder.ID] = []) {
@@ -106,14 +115,5 @@ extension ReminderListViewController {
         button.id = reminder.id
         button.setImage(image, for: .normal)
         return UICellAccessory.CustomViewConfiguration(customView: button, placement: .leading(displayed: .always))
-    }
-
-    /// 新しい Reminder とインデックスを元に、Reminder を更新
-    /// - Parameters:
-    ///   - reminder: 新しい Reminder
-    ///   - id: インデックス
-    private func update(_ reminder: Reminder, with id: Reminder.ID) {
-        let index = reminders.indexOfReminder(with: id)
-        reminders[index] = reminder
     }
 }
