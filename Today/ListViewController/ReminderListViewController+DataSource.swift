@@ -25,6 +25,20 @@ extension ReminderListViewController {
 
     // MARK: Internal Functions
 
+    /// 新しい Reminder を追加
+    /// - Parameter reminder: 新しい Reminder
+    func add(_ reminder: Reminder) {
+        reminders.append(reminder)
+    }
+
+    /// インデックスを元に Reminder を取得
+    /// - Parameter id: インデックス
+    /// - Returns: Reminder
+    func reminder(for id: Reminder.ID) -> Reminder {
+        let index = reminders.indexOfReminder(with: id)
+        return reminders[index]
+    }
+
     /// 新しい Reminder とインデックスを元に、Reminder を更新
     /// - Parameters:
     ///   - reminder: 新しい Reminder
@@ -70,8 +84,6 @@ extension ReminderListViewController {
         cell.backgroundConfiguration = backgroundConfiguration
     }
 
-    // MARK: Internal Functions
-
     /// Reminder の完了状態を切替
     /// - Parameter id: ID
     func completeReminder(with id: Reminder.ID) {
@@ -79,14 +91,6 @@ extension ReminderListViewController {
         reminder.isComplete.toggle()
         update(reminder, with: id)
         updateSnapShot(reloading: [id])
-    }
-
-    /// インデックスを元に Reminder を取得
-    /// - Parameter id: インデックス
-    /// - Returns: Reminder
-    func reminder(for id: Reminder.ID) -> Reminder {
-        let index = reminders.indexOfReminder(with: id)
-        return reminders[index]
     }
 
     // MARK: Private Functions
