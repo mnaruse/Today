@@ -68,6 +68,7 @@ extension ReminderListViewController {
             snapShot.reloadItems(ids)
         }
         dataSource.apply(snapShot)
+        headerView?.progress = progress
     }
 
     /// コレクションビューのセルに登録する内容のハンドラー
