@@ -24,3 +24,7 @@
 // MARK: Accessibility Labels
 
 "accessibility.addReminder" = "Add reminder";
+
+// MARK: Actions
+
+"action.delete" = "Delete";

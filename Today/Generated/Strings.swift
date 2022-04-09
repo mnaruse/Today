@@ -32,6 +32,11 @@ internal enum L10n {
     internal static let addReminder = L10n.tr("Localizable", "accessibility.addReminder")
   }
 
+  internal enum Action {
+    /// Delete
+    internal static let delete = L10n.tr("Localizable", "action.delete")
+  }
+
   internal enum Reminder {
     internal enum Section {
       /// Date

@@ -48,6 +48,13 @@ extension ReminderListViewController {
         reminders[index] = reminder
     }
 
+    /// 特定の ID の Reminder を削除
+    /// - Parameter id: 削除したい Reminder の ID
+    func deleteReminder(with id: Reminder.ID) {
+        let index = reminders.indexOfReminder(with: id)
+        reminders.remove(at: index)
+    }
+
     /// スナップショットを更新
     /// - Parameter ids: 更新したい Reminder の ID の配列
     func updateSnapShot(reloading ids: [Reminder.ID] = []) {
