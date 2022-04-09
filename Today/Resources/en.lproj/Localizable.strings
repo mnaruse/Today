@@ -5,9 +5,6 @@
 //  Created by Miharu Naruse on 2022/03/29.
 //
 
-"completed" = "Completed";
-"notCompleted" = "Not completed";
-"toggleCompletion" = "Toggle completion";
 "todayAtTime" = "Today at %@";
 "dateAtTime" = "%@ at %@";
 "today" = "Today";
@@ -23,6 +20,9 @@
 
 // MARK: Accessibility Labels
 
+"accessibility.completed" = "Completed";
+"accessibility.notCompleted" = "Not completed";
+"accessibility.toggleCompletion" = "Toggle completion";
 "accessibility.addReminder" = "Add reminder";
 
 // MARK: Actions

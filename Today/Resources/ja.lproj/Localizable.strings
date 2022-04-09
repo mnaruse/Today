@@ -5,9 +5,6 @@
 //  Created by Miharu Naruse on 2022/03/29.
 //
 
-"completed" = "完了";
-"notCompleted" = "未完了";
-"toggleCompletion" = "切替完了";
 "todayAtTime" = "今日 %@";
 "dateAtTime" = "%@ %@";
 "today" = "今日";
@@ -23,6 +20,9 @@
 
 // MARK: Accessibility Labels
 
+"accessibility.completed" = "完了";
+"accessibility.notCompleted" = "未完了";
+"accessibility.toggleCompletion" = "切替完了";
 "accessibility.addReminder" = "リマインダーを追加";
 
 // MARK: Actions

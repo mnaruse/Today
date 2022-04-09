@@ -10,26 +10,26 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
-  /// Completed
-  internal static let completed = L10n.tr("Localizable", "completed")
   /// %@ at %@
   internal static func dateAtTime(_ p1: Any, _ p2: Any) -> String {
     return L10n.tr("Localizable", "dateAtTime", String(describing: p1), String(describing: p2))
   }
-  /// Not completed
-  internal static let notCompleted = L10n.tr("Localizable", "notCompleted")
   /// Today
   internal static let today = L10n.tr("Localizable", "today")
   /// Today at %@
   internal static func todayAtTime(_ p1: Any) -> String {
     return L10n.tr("Localizable", "todayAtTime", String(describing: p1))
   }
-  /// Toggle completion
-  internal static let toggleCompletion = L10n.tr("Localizable", "toggleCompletion")
 
   internal enum Accessibility {
     /// Add reminder
     internal static let addReminder = L10n.tr("Localizable", "accessibility.addReminder")
+    /// Completed
+    internal static let completed = L10n.tr("Localizable", "accessibility.completed")
+    /// Not completed
+    internal static let notCompleted = L10n.tr("Localizable", "accessibility.notCompleted")
+    /// Toggle completion
+    internal static let toggleCompletion = L10n.tr("Localizable", "accessibility.toggleCompletion")
   }
 
   internal enum Action {
