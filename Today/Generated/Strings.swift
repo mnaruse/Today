@@ -27,6 +27,11 @@ internal enum L10n {
   /// Toggle completion
   internal static let toggleCompletion = L10n.tr("Localizable", "toggleCompletion")
 
+  internal enum Accessibility {
+    /// Add reminder
+    internal static let addReminder = L10n.tr("Localizable", "accessibility.addReminder")
+  }
+
   internal enum Reminder {
     internal enum Section {
       /// Date
@@ -39,8 +44,10 @@ internal enum L10n {
   }
 
   internal enum Title {
+    /// Add Reminder
+    internal static let addReminder = L10n.tr("Localizable", "title.addReminder")
     /// Reminder
-    internal static let reminderVC = L10n.tr("Localizable", "title.reminderVC")
+    internal static let viewAndEditReminder = L10n.tr("Localizable", "title.viewAndEditReminder")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

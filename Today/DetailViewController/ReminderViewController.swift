@@ -25,6 +25,11 @@ class ReminderViewController: UICollectionViewController {
     ///
     /// ユーザーが保存または破棄を選択するまで、編集内容を保存する。
     var workingReminder: Reminder
+    /// 新しい Reminder を追加しているか、既存のものを閲覧、編集しているか
+    ///
+    /// `true` : 新しい Reminder を追加している
+    /// `false` : 既存のものを閲覧、編集している
+    var isAddingNewReminder = false
     /// Reminder の値が変更されたときに実行したい動作を保持
     var onChange: (Reminder) -> Void
 
@@ -62,7 +67,7 @@ class ReminderViewController: UICollectionViewController {
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
 
-        navigationItem.title = L10n.Title.reminderVC
+        navigationItem.title = L10n.Title.viewAndEditReminder
         navigationItem.rightBarButtonItem = editButtonItem
 
         updateSnapShotForViewing()
@@ -76,7 +81,11 @@ class ReminderViewController: UICollectionViewController {
         if editing {
             prepareForEditing()
         } else {
-            prepareForViewing()
+            if isAddingNewReminder {
+                onChange(workingReminder)
+            } else {
+                prepareForViewing()
+            }
         }
     }
 

@@ -18,4 +18,9 @@
 
 // MARK: Titles
 
-"title.reminderVC" = "リマインダー";
+"title.viewAndEditReminder" = "リマインダー";
+"title.addReminder" = "リマインダー追加";
+
+// MARK: Accessibility Labels
+
+"accessibility.addReminder" = "リマインダーを追加";

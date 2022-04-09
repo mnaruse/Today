@@ -18,4 +18,9 @@
 
 // MARK: Titles
 
-"title.reminderVC" = "Reminder";
+"title.viewAndEditReminder" = "Reminder";
+"title.addReminder" = "Add Reminder";
+
+// MARK: Accessibility Labels
+
+"accessibility.addReminder" = "Add reminder";

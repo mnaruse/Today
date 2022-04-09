@@ -27,6 +27,10 @@ class ReminderListViewController: UICollectionViewController {
             collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
 
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didPressAddButton(_:)))
+        addButton.accessibilityLabel = L10n.Accessibility.addReminder
+        navigationItem.rightBarButtonItem = addButton
+
         updateSnapShot()
 
         collectionView.dataSource = dataSource
