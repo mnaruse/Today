@@ -48,6 +48,15 @@ internal enum L10n {
     }
   }
 
+  internal enum Segment {
+    /// All
+    internal static let all = L10n.tr("Localizable", "segment.all")
+    /// Future
+    internal static let future = L10n.tr("Localizable", "segment.future")
+    /// Today
+    internal static let today = L10n.tr("Localizable", "segment.today")
+  }
+
   internal enum Title {
     /// Add Reminder
     internal static let addReminder = L10n.tr("Localizable", "title.addReminder")

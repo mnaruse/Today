@@ -12,6 +12,17 @@ enum ReminderListStyle: Int, CaseIterable {
     case future
     case all
 
+    var name: String {
+        switch self {
+        case .today:
+            return L10n.Segment.today
+        case .future:
+            return L10n.Segment.future
+        case .all:
+            return L10n.Segment.all
+        }
+    }
+
     func shouldInclude(date: Date) -> Bool {
         let isInToday = Locale.current.calendar.isDateInToday(date)
         switch self {

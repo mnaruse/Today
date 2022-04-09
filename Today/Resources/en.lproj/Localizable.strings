@@ -28,3 +28,9 @@
 // MARK: Actions
 
 "action.delete" = "Delete";
+
+// MARK: Segmented Controls
+
+"segment.today" = "Today";
+"segment.future" = "Future";
+"segment.all" = "All";

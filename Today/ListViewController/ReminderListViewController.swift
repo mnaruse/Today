@@ -19,6 +19,11 @@ class ReminderListViewController: UICollectionViewController {
     }
 
     var listStyle: ReminderListStyle = .today
+    var listStyleSegmentedControl = UISegmentedControl(items: [
+        ReminderListStyle.today.name,
+        ReminderListStyle.future.name,
+        ReminderListStyle.all.name
+    ])
 
     // MARK: Overrides
 
@@ -37,6 +42,9 @@ class ReminderListViewController: UICollectionViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didPressAddButton(_:)))
         addButton.accessibilityLabel = L10n.Accessibility.addReminder
         navigationItem.rightBarButtonItem = addButton
+
+        listStyleSegmentedControl.selectedSegmentIndex = listStyle.rawValue
+        navigationItem.titleView = listStyleSegmentedControl
 
         updateSnapShot()
 
