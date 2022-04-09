@@ -8,6 +8,12 @@
 import UIKit
 
 class ProgressHeaderView: UICollectionReusableView {
+    // MARK: Internal Static Computed Properties
+
+    static var elementKind: String {
+        return UICollectionView.elementKindSectionHeader
+    }
+
     // MARK: Internal Stored Properties
 
     var progress: CGFloat = 0 {
