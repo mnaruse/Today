@@ -57,10 +57,13 @@ extension ReminderListViewController {
 
     /// スナップショットを更新
     /// - Parameter ids: 更新したい Reminder の ID の配列
-    func updateSnapShot(reloading ids: [Reminder.ID] = []) {
+    func updateSnapShot(reloading idsThatChanged: [Reminder.ID] = []) {
+        let ids = idsThatChanged.filter { id in
+            filteredReminders.contains(where: { $0.id == id })
+        }
         var snapShot = SnapShot()
         snapShot.appendSections([0])
-        snapShot.appendItems(reminders.map { $0.id })
+        snapShot.appendItems(filteredReminders.map { $0.id })
         if !ids.isEmpty {
             snapShot.reloadItems(ids)
         }
@@ -73,7 +76,7 @@ extension ReminderListViewController {
     ///   - indexPath: インデックスパス
     ///   - id: ID
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: Reminder.ID) {
-        let reminder = reminders[indexPath.item]
+        let reminder = reminder(for: id)
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.text = reminder.title
         contentConfiguration.secondaryText = reminder.dueDate.dayAndTimeText
