@@ -24,6 +24,8 @@
 "accessibility.notCompleted" = "Not completed";
 "accessibility.toggleCompletion" = "Toggle completion";
 "accessibility.addReminder" = "Add reminder";
+"accessibility.percent" = "%d percent";
+"accessibility.progress" = "Progress";
 
 // MARK: Actions
 

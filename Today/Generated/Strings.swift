@@ -28,6 +28,12 @@ internal enum L10n {
     internal static let completed = L10n.tr("Localizable", "accessibility.completed")
     /// Not completed
     internal static let notCompleted = L10n.tr("Localizable", "accessibility.notCompleted")
+    /// %d percent
+    internal static func percent(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "accessibility.percent", p1)
+    }
+    /// Progress
+    internal static let progress = L10n.tr("Localizable", "accessibility.progress")
     /// Toggle completion
     internal static let toggleCompletion = L10n.tr("Localizable", "accessibility.toggleCompletion")
   }

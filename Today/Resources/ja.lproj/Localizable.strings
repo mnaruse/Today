@@ -24,6 +24,8 @@
 "accessibility.notCompleted" = "未完了";
 "accessibility.toggleCompletion" = "切替完了";
 "accessibility.addReminder" = "リマインダーを追加";
+"accessibility.percent" = "%d パーセント";
+"accessibility.progress" = "進行状況";
 
 // MARK: Actions
 
