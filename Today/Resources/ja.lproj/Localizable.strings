@@ -39,4 +39,5 @@
 
 // MARK: Errors
 
-"error.readReminders" = "リマインダーの読み込みに失敗しました。";
+"error.failedReadingReminders" = "リマインダーの読み込みに失敗しました。";
+"error.reminderHasNoDueDate" = "リマインダーに期限が設定されていません。";

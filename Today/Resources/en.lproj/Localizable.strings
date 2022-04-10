@@ -39,4 +39,5 @@
 
 // MARK: Errors
 
-"error.readReminders" = "Failed to read reminders.";
+"error.failedReadingReminders" = "Failed to read reminders.";
+"error.reminderHasNoDueDate" = "A reminder has no due date.";

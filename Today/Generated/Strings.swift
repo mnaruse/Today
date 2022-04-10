@@ -45,7 +45,9 @@ internal enum L10n {
 
   internal enum Error {
     /// Failed to read reminders.
-    internal static let readReminders = L10n.tr("Localizable", "error.readReminders")
+    internal static let failedReadingReminders = L10n.tr("Localizable", "error.failedReadingReminders")
+    /// A reminder has no due date.
+    internal static let reminderHasNoDueDate = L10n.tr("Localizable", "error.reminderHasNoDueDate")
   }
 
   internal enum Reminder {
