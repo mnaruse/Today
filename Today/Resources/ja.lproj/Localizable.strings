@@ -41,3 +41,4 @@
 
 "error.failedReadingReminders" = "リマインダーの読み込みに失敗しました。";
 "error.reminderHasNoDueDate" = "リマインダーに期限が設定されていません。";
+"error.accessDenied" = "アプリにはリマインダーの読み取り権限がありません。";

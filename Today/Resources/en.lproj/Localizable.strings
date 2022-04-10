@@ -41,3 +41,4 @@
 
 "error.failedReadingReminders" = "Failed to read reminders.";
 "error.reminderHasNoDueDate" = "A reminder has no due date.";
+"error.accessDenied" = "The app doesn't have permission to read reminders.";

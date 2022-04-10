@@ -8,11 +8,14 @@
 import Foundation
 
 enum TodayError: LocalizedError {
+    case accessDenied
     case failedReadingReminders
     case reminderHasNoDueDate
 
     var errorDescription: String? {
         switch self {
+        case .accessDenied:
+            return L10n.Error.accessDenied
         case .failedReadingReminders:
             return L10n.Error.failedReadingReminders
         case .reminderHasNoDueDate:

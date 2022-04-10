@@ -44,6 +44,8 @@ internal enum L10n {
   }
 
   internal enum Error {
+    /// The app doesn't have permission to read reminders.
+    internal static let accessDenied = L10n.tr("Localizable", "error.accessDenied")
     /// Failed to read reminders.
     internal static let failedReadingReminders = L10n.tr("Localizable", "error.failedReadingReminders")
     /// A reminder has no due date.
