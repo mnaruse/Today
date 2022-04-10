@@ -43,6 +43,11 @@ internal enum L10n {
     internal static let delete = L10n.tr("Localizable", "action.delete")
   }
 
+  internal enum Error {
+    /// Failed to read reminders.
+    internal static let readReminders = L10n.tr("Localizable", "error.readReminders")
+  }
+
   internal enum Reminder {
     internal enum Section {
       /// Date

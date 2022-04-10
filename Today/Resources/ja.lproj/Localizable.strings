@@ -36,3 +36,7 @@
 "segment.today" = "今日";
 "segment.future" = "将来";
 "segment.all" = "すべて";
+
+// MARK: Errors
+
+"error.readReminders" = "リマインダーの読み込みに失敗しました。";

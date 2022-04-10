@@ -36,3 +36,7 @@
 "segment.today" = "Today";
 "segment.future" = "Future";
 "segment.all" = "All";
+
+// MARK: Errors
+
+"error.readReminders" = "Failed to read reminders.";
