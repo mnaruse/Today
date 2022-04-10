@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2809FF3E2802661900147BCC /* CAGradientLayer+ListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2809FF3D2802661900147BCC /* CAGradientLayer+ListStyle.swift */; };
 		2831AEAA2801593E00AFEDE6 /* ReminderListStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831AEA92801593E00AFEDE6 /* ReminderListStyle.swift */; };
 		2831AEAC2801945B00AFEDE6 /* ProgressHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831AEAB2801945B00AFEDE6 /* ProgressHeaderView.swift */; };
 		28378E2627EDB45C0000F8F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28378E2527EDB45C0000F8F0 /* AppDelegate.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2809FF3D2802661900147BCC /* CAGradientLayer+ListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+ListStyle.swift"; sourceTree = "<group>"; };
 		2831AEA92801593E00AFEDE6 /* ReminderListStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListStyle.swift; sourceTree = "<group>"; };
 		2831AEAB2801945B00AFEDE6 /* ProgressHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHeaderView.swift; sourceTree = "<group>"; };
 		28378E2227EDB45C0000F8F0 /* Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,8 +216,9 @@
 		28F1B68927EE1BB70070DB3D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				28F1B68A27EE1C390070DB3D /* Reminder.swift */,
+				2809FF3D2802661900147BCC /* CAGradientLayer+ListStyle.swift */,
 				28F1B68C27EEE0270070DB3D /* Date+Today.swift */,
+				28F1B68A27EE1C390070DB3D /* Reminder.swift */,
 				2831AEA92801593E00AFEDE6 /* ReminderListStyle.swift */,
 			);
 			path = Models;
@@ -424,6 +427,7 @@
 				28378E2627EDB45C0000F8F0 /* AppDelegate.swift in Sources */,
 				2883144027F7110800791C4E /* ReminderViewController+CellConfiguration.swift in Sources */,
 				28378E2827EDB45C0000F8F0 /* SceneDelegate.swift in Sources */,
+				2809FF3E2802661900147BCC /* CAGradientLayer+ListStyle.swift in Sources */,
 				2883144727F76B4A00791C4E /* UIContentConfiguration+Stateless.swift in Sources */,
 				2883144327F714F000791C4E /* UIView+PinnedSubview.swift in Sources */,
 				28F1B68B27EE1C390070DB3D /* Reminder.swift in Sources */,
